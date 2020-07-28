@@ -19,6 +19,8 @@ function App() {
           Learn React
         </a>
         <div>1 the newest</div>
+        <div>2 new to</div>
+        <div>3 new also</div>
       </header>
     </div>
   );
