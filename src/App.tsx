@@ -1,29 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './app.css';
+import styles from './app.module.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <div>1 the newest</div>
-        <div>2 new to</div>
-        <div>3 new also</div>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <div>Тоже new, хули</div>
+            <div className={styles.btn}>
+                <div className="btn"></div>
+            </div>
+            <div className="btn red">
+                <div className="red"></div>
+            </div>
+        </>
+    );
 }
 
 export default App;
