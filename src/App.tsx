@@ -1,6 +1,9 @@
 import React from 'react';
 import moment from 'moment';
-import addDays from 'date-fns/addDays'
+import addDays from 'date-fns/addDays';
+import Checkbox from './components/checkbox/Checkbox';
+import SocialList from './components/socialList/SocialList';
+
 import styles from './app.module.css';
 
 function App() {
@@ -9,13 +12,15 @@ function App() {
     console.log('App -> fns', addDays(new Date(), 1));
     return (
         <>
-            <div>Тоже new, хули</div>
+            {/* <div>Тоже new, хули</div>
             <div className={styles.btn}>
                 <div className="btn"></div>
             </div>
             <div className="btn red">
                 <div className="red"></div>
-            </div>
+            </div> */}
+            <Checkbox />
+            <SocialList />
         </>
     );
 }

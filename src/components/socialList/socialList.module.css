@@ -1,0 +1,62 @@
+.list {
+    display: flex;
+}
+
+.list li {
+    list-style: none;
+}
+
+.list li a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to top, #ddd, #fff);
+    transition: 0.5s;
+}
+
+.list li a:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.list li a .fa {
+    width: 100%;
+    height: 100%;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    color: #262626;
+    background: linear-gradient(to bottom, #ddd, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.list li:nth-child(1) a:hover .fa {
+    color: #3b5999;
+}
+
+.list li:nth-child(2) a:hover .fa {
+    color: #dd4b39;
+}
+
+.list li:nth-child(3) a:hover .fa {
+    color: #e4405f;
+}
+
+.list li:nth-child(4) a:hover .fa {
+    color: #0077B5;
+}
+
+.list li:nth-child(5) a:hover .fa {
+    color: #55acee;
+}
+
+.list li a .fa svg {
+    width: 40px;
+    height: 40px;
+}
