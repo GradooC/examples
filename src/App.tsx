@@ -3,6 +3,7 @@ import moment from 'moment';
 import addDays from 'date-fns/addDays';
 import Checkbox from './components/checkbox/Checkbox';
 import SocialList from './components/socialList/SocialList';
+import Button from './components/button/Button';
 
 import styles from './app.module.css';
 
@@ -21,6 +22,7 @@ function App() {
             </div> */}
             <Checkbox />
             <SocialList />
+            <Button />
         </>
     );
 }

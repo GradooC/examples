@@ -1,0 +1,105 @@
+.button {
+    --main-color: #03e9f4;
+    --secandary-color: #050801;
+    position: relative;
+    padding: 25px 30px;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--main-color);
+    font-size: 24px;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.button:hover {
+    background-color: var(--main-color);
+    color: var(--secandary-color);
+    box-shadow: 0 0 5px var(--main-color),
+                0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 200px var(--main-color);
+}
+
+.button span {
+    display: block;
+    position: absolute;
+}
+
+.button span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--main-color));
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--main-color));
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, transparent, var(--main-color));
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.button span:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, var(--main-color));
+    animation: animate4 1s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
