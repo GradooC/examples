@@ -1,29 +1,34 @@
 import React from 'react';
 import moment from 'moment';
 import addDays from 'date-fns/addDays';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Checkbox from './components/checkbox/Checkbox';
 import SocialList from './components/socialList/SocialList';
 import Button from './components/button/Button';
+import { TodoPage } from './features/todo-page';
+import { SpacePage } from './features/space-page';
 
-import styles from './app.module.css';
+import './App.css';
 
 function App() {
-    const add1New = () => 2 + 2;
     console.log('App -> moment', moment().add('1', 'days').toDate());
     console.log('App -> fns', addDays(new Date(), 1));
     return (
-        <>
-            {/* <div>Тоже new, хули</div>
-            <div className={styles.btn}>
-                <div className="btn"></div>
-            </div>
-            <div className="btn red">
-                <div className="red"></div>
-            </div> */}
-            <Checkbox />
-            <SocialList />
-            <Button />
-        </>
+        <Router>
+            <Switch>
+                <Route path="/list">
+                    <TodoPage />
+                </Route>
+                <Route path="/space">
+                    <SpacePage />
+                </Route>
+                <Route path="/">
+                    <Checkbox />
+                    <SocialList />
+                    <Button />
+                </Route>
+            </Switch>
+        </Router>
     );
 }
 

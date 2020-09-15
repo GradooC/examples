@@ -1,0 +1,158 @@
+.page {
+    --space-color: black;
+    --white-color: aliceblue;
+    --blue-color: skyblue;
+    --animation-duration: 30s;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--space-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.root {
+    --root-sphere-radius: 500px;
+    --earth-radius: 300px;
+    --sun-radius: 40px;
+    --orbit-radius: 370px;
+    --radius-diff: calc((var(--orbit-radius) - var(--earth-radius)) / -2);
+    position: relative;
+    width: var(--root-sphere-radius);
+    height: var(--root-sphere-radius);
+}
+
+.earth {
+    position: absolute;
+    z-index: 2;
+    width: var(--earth-radius);
+    height: var(--earth-radius);
+    background-color: var(--space-color);
+    border-radius: 100%;
+
+    animation: earth var(--animation-duration) linear infinite;
+}
+
+.reflex {
+    position: absolute;
+    width: var(--earth-radius);
+    height: var(--earth-radius);
+    border-radius: 100%;
+
+    animation: reflex var(--animation-duration) linear infinite;
+}
+
+.sunOrbit {
+    position: absolute;
+    z-index: 1;
+    top: calc(var(--radius-diff) - 50px);
+    left: calc(var(--radius-diff) - 50px);
+    width: var(--orbit-radius);
+    height: var(--orbit-radius);
+    border-radius: 100%;
+    animation: sun var(--animation-duration) linear infinite;
+}
+
+.sun {
+    position: absolute;
+    left: calc((var(--orbit-radius) / 2) - (var(--sun-radius) / 2));
+    width: var(--sun-radius);
+    height: var(--sun-radius);
+    border-radius: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 0 5px var(--white-color),
+                0 0 10px var(--white-color),
+                0 0 15px var(--white-color),
+                0 0 20px var(--white-color),
+                0 0 30px var(--white-color),
+                0 0 30px var(--blue-color),
+                0 0 50px var(--white-color),
+                0 0 50px var(--blue-color),
+                0 0 100px var(--white-color),
+                0 0 100px var(--blue-color),
+                0 0 200px var(--white-color),
+                0 0 200px var(--blue-color),
+                0 0 300px var(--white-color),
+                0 0 300px var(--blue-color);
+
+}
+
+@keyframes sun {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes earth {
+    0% {
+        transform: rotate(-10deg);
+        box-shadow: inset 0 20px 20px var(--blue-color);
+    }
+
+    25% {
+        transform: rotate(-100deg);
+        box-shadow: inset 0 10px 10px var(--blue-color);
+    }
+
+    50% {
+        transform: rotate(-190deg);
+        box-shadow: inset 0 8px 8px var(--blue-color);
+
+    }
+
+    75% {
+        transform: rotate(-280deg);
+        box-shadow: inset 0 10px 10px var(--blue-color);
+
+    }
+
+    100% {
+        transform: rotate(-370deg);
+        box-shadow: inset 0 20px 20px var(--blue-color);
+    }
+}
+
+@keyframes reflex {
+    0% {
+        transform: rotate(-10deg);
+        box-shadow: 0 -5px 5px var(--white-color),
+                    0 -10px 10px var(--white-color),
+                    0 -10px 10px var(--blue-color),
+                    0 -20px 20px var(--white-color),
+                    0 -20px 20px var(--blue-color);
+    }
+
+    25% {
+        transform: rotate(-100deg);
+        box-shadow: 0 -5px 5px var(--white-color),
+                    0 -15px 15px var(--white-color),
+                    0 -15px 15px var(--blue-color);
+    }
+
+    50% {
+        transform: rotate(-190deg);
+        box-shadow: 0 -5px 5px var(--white-color);
+
+    }
+
+    75% {
+        transform: rotate(-280deg);
+        box-shadow: 0 -5px 5px var(--white-color),
+                    0 -15px 15px var(--white-color),
+                    0 -15px 15px var(--blue-color);
+
+    }
+
+    100% {
+        transform: rotate(-370deg);
+        box-shadow: 0 -5px 5px var(--white-color),
+                    0 -10px 10px var(--white-color),
+                    0 -10px 10px var(--blue-color),
+                    0 -20px 20px var(--white-color),
+                    0 -20px 20px var(--blue-color);
+    }
+}
