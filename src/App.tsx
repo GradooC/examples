@@ -7,6 +7,7 @@ import SocialList from './components/socialList/SocialList';
 import Button from './components/button/Button';
 import { TodoPage } from './features/todo-page';
 import { SpacePage } from './features/space-page';
+import { CardPage } from './features/card-page';
 
 import './App.css';
 
@@ -16,6 +17,9 @@ function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/cards">
+                    <CardPage />
+                </Route>
                 <Route path="/list">
                     <TodoPage />
                 </Route>

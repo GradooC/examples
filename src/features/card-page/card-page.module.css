@@ -1,0 +1,108 @@
+.root {
+    --card-height: 400px;
+    --card-width: 350px;
+    --card-min-width: 250px;
+    --card-border-radius: 16px;
+    --background-color: #17141d;
+
+    background-color: var(--background-color);
+    color: white;
+    font-family: 'DM Mono', monospace;
+
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+}
+
+.root::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.root::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #201c29;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.root::-webkit-scrollbar-track {
+    background: linear-gradient(
+        to right,
+        #201c29,
+        #201c29,
+        1px,
+        #17141d,
+        #17141d
+    );
+}
+
+.root article {
+    display: flex;
+    flex-direction: column;
+    height: var(--card-height);
+    width: var(--card-width);
+    min-width: var(--card-min-width);
+    padding: 1.5rem;
+
+    border-radius: var(--card-border-radius);
+    background-color: var(--background-color);
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.2s;
+}
+
+.root article:hover {
+    transform: translateY(-1rem);
+
+}
+
+.root article:hover~article {
+    transform: translateX(130px);
+}
+
+.root article:not(:first-child) {
+    margin-left: -130px;
+}
+
+.root article:hover header h2 {
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    background-clip: text;
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+}
+
+.cardAuthor {
+    position: relative;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+    margin: 3rem 0 0;
+}
+
+.cardAuthor img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    margin: 16px 10px;
+    object-fit: cover;
+}
+
+.halfCircle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.authorNamePrefix {
+    font-style: normal;
+    font-size: 700;
+    color: #7a7a8c;
+}
